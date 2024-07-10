@@ -13,7 +13,10 @@
   ],
   "exports": {
     ".": "./src/index.tsx",
-    "./plugin.ts":"./dist/utils/plugin.js",
+    "./plugin": {
+      "import": "./dist/plugin.js",
+      "require": "./dist/plugin.cjs"
+    },
     "./style.css": "./dist/index.css"
   },
   "scripts":{
