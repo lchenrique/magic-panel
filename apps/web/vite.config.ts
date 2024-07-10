@@ -4,17 +4,6 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  optimizeDeps: {
-    include: ['magic-panel/dist/components/**/*.vue'],
-  },
-  build: {
-    commonjsOptions: {
-      include: [/magic-panel/, /node_modules/],
-    },
-    rollupOptions: {
-      external: ['magic-panel'],
-    },
-  },
   // build: {
   //   lib: {
   //     entry: 'src/index.tsx',
