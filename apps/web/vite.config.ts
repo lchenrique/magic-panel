@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build:{
     rollupOptions:{
-      external: ["magic-panel"]
+      external:  [/\.css$/g]
     }
   }
   // build: {
