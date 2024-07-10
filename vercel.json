@@ -12,7 +12,7 @@
       "dest": "apps/web/dist/index.html"
     }
   ],
-  "buildCommand": "npm run turbo build",
+  "buildCommand": "turbo build",
   "outputDirectory": "apps/web/dist",
   "env": {
     "NODE_ENV": "production"
