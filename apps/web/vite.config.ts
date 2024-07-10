@@ -11,6 +11,9 @@ export default defineConfig({
     commonjsOptions: {
       include: [/magic-panel/, /node_modules/],
     },
+    rollupOptions: {
+      external: ['magic-panel'],
+    },
   },
   // build: {
   //   lib: {
