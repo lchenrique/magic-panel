@@ -1,8 +1,8 @@
 import { ReactNode, useCallback, useEffect, useState } from "react";
-import "./style.css"
 import { cn } from "../../utils";
 import { PanelHeader } from "./panel-header";
 import { PanelClose } from "./panel-close";
+import "./style.css"
 
 export interface IPanelPropsBase {
   header?: ReactNode

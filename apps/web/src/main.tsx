@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
 import App from './App.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Doc } from './pages/doc.tsx';
-import { Layout } from './layout/layout.tsx';
+import { Layout } from './layout/layout.tsx'
+import "magic-panel/style.css"
+import './index.css'
+
 
 const router = createBrowserRouter([
   {

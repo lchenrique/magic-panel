@@ -1,32 +1,28 @@
 {
   "name": "magic-panel",
   "private": false,
-  "description":"The magic panel for react",
+  "description": "The magic panel for react",
   "version": "1.0.0",
-  "type": "module",
-	"main": "dist/index.umd.js", 
-  "module": "dist/index.es.js",
-  "types": "dist/src/index.d.ts",
-  "sideEffects": false, 
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "type":"module",
   "files": [
-   	"dist/**"
+    "dist/**"
   ],
   "exports": {
-		".": {
-			"require": "./dist/index.umd.js",
-			"import": "./dist/index.es.js",
-			"module": "./dist/index.es.js",
-			"types": ["./dist/src/index.d.ts"]
-		},
-		"./dist/style.css": "./dist/style.css"
-	},
-  "publishConfig": {
-    "access": "public"
+    ".": "./src/index.tsx",
+    "./plugin.ts":"./dist/utils/plugin.js",
+    "./style.css": "./dist/index.css"
   },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "test": "vitest"
+  "scripts":{
+    "build": "tsup",
+    "clean": "rm -rf dist",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "jest"
   },
   "prettier": {
     "printWidth": 80

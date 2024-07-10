@@ -5,7 +5,6 @@ import CodeExample from './components/code-exemple/code-exemple'
 import { ContentScroll } from './components/content-scroll/content-scroll'
 import {MagicPanel, IPanelPropsDrawer} from "magic-panel"
 import Button from './components/button/button'
-
 function App() {
   const [isOpen, setIsOpen] = useState(false)
   const [isDrawer, setDrawer] = useState(false)

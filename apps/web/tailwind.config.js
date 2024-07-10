@@ -1,18 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 
-import { magicPanelPlugin } from 'magic-panel';
+import { magicPanelPlugin } from 'magic-panel/plugin';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
+console.log(magicPanelPlugin)
 
 export default {
   content: [
-    "./index.html",
+ "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   important:true,
   darkMode: ['[data-mode="dark"]'],
   theme: {
-    extend: {
+    extend: { 
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

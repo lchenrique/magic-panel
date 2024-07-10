@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
-import { magicPanelPlugin } from './plugin';
-
+import plugin from "tailwindcss/plugin"
 // eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
-
 export default {
   content: [
     "./index.html",
@@ -50,6 +48,8 @@ export default {
       },
     },
   },
-  plugins:  [ magicPanelPlugin ]
+  plugins:  [ plugin(function({ addVariant }) {
+    addVariant('close', ['&:before', '&:after'])
+  })  ]
 }
 

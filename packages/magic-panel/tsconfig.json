@@ -1,11 +1,16 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+  "extends": "@repo/typescript-config/react-library.json",
+  "compilerOptions": {
+    "lib": ["dom", "ES2015"],
+    "moduleResolution": "bundler"
+  },
+  "include": [
+    ".",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "allowOverwrite": true
+
 }
