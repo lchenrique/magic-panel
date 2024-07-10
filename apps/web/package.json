@@ -1,12 +1,12 @@
 {
   "name": "magic-panel-web",
   "private": false,
-  "description":"The magic panel for react",
+  "description": "The magic panel for react",
   "version": "1.0.0",
-  "type":"module", 
-  "sideEffects": false, 
+  "type": "module",
+  "sideEffects": false,
   "files": [
-   	"dist/**"
+    "dist/**"
   ],
   "scripts": {
     "dev": "vite",
@@ -25,7 +25,7 @@
     "react-syntax-highlighter": "^15.5.0",
     "tailwind-merge": "^2.3.0",
     "vite-plugin-dts": "^3.9.1",
-    "magic-panel": "*"
+    "magic-panel": "file:../../packages/magic-panel"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.1.0",
