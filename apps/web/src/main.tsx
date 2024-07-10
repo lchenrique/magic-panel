@@ -4,7 +4,7 @@ import App from './App.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Doc } from './pages/doc.tsx';
 import { Layout } from './layout/layout.tsx'
-import "magic-panel/index.css"
+import "magic-panel/dist/index.css"
 import './index.css'
 
 
