@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/web/package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "apps/web/dist/index.html"
+    }
+  ],
+  "buildCommand": "npm run turbo build",
+  "outputDirectory": "apps/web/dist",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
