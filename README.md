@@ -1,81 +1,139 @@
-# Turborepo starter
+Com base nas informações fornecidas, aqui está o conteúdo para o `README.md` do Magic Panel:
 
-This is an official starter Turborepo.
+---
 
-## Using this example
+## Magic Panel
 
-Run the following command:
+![Magic Panel Logo](magic-panel-logo.png)
 
-```sh
-npx create-turbo@latest
+Magic Panel is a React library developed with TailwindCSS to simplify the implementation of modals and drawers.
+
+### Why Magic Panel?
+
+- **Intuitive Usage:** Easily switch between modal and drawer using a boolean without compromising layout.
+- **Highly Customizable:** Adjust style and behavior as needed.
+- **Responsive Design:** Perfect for creating responsive and adaptable interfaces.
+- **Versatility:** Ideal for scenarios requiring different interfaces on desktop and mobile.
+
+### Installation
+
+To use Magic Panel in your React project, follow these steps:
+
+1. **Install via npm:**
+
+   ```bash
+   npm install magic-panel --save
+   ```
+
+2. **Configure tailwind.config.js:**
+
+   ```javascript
+   const { magicPanelPlugin } = require('magic-panel');
+
+   module.exports = {
+     content: ["./src/**/*.{html,js}"],
+     theme: {
+       extend: {},
+     },
+     plugins: [magicPanelPlugin()] // Add this line
+   };
+   ```
+
+3. **Import into your project:**
+
+   ```javascript
+   import { MagicPanel } from 'magic-panel';
+   import 'magic-panel/dist/style.css'; // Import the provided CSS file
+   ```
+
+### Basic Usage
+
+#### Example Usage as Modal:
+
+```javascript
+import React, { useState } from 'react';
+import { MagicPanel } from 'magic-panel';
+
+const App = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <>
+      <button onClick={handleOpen}>Open Panel</button>
+      <MagicPanel open={open} onChange={setOpen}>
+        <MagicPanel.Header>My Panel</MagicPanel.Header>
+        <div>
+          Panel Content
+          <MagicPanel.Close />
+        </div>
+      </MagicPanel>
+    </>
+  );
+};
+
+export default App;
 ```
 
-## What's inside?
+#### Example Usage as Drawer:
 
-This Turborepo includes the following packages/apps:
+```javascript
+import React, { useState } from 'react';
+import { MagicPanel } from 'magic-panel';
 
-### Apps and Packages
+const App = () => {
+  const [open, setOpen] = useState(false);
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+  const handleClose = () => {
+    setOpen(false);
+  };
 
-### Utilities
+  return (
+    <>
+      <button onClick={handleOpen}>Open Drawer</button>
+      <MagicPanel open={open} onChange={setOpen} drawer placement="right">
+        <div>
+          Drawer Content
+          <MagicPanel.Close />
+        </div>
+      </MagicPanel>
+    </>
+  );
+};
 
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
+export default App;
 ```
 
-### Remote Caching
+### Props
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+- **open:** Boolean that controls whether the panel is open or closed.
+- **onChange:** Callback function called when the state of `open` changes.
+- **destroyOnClose:** Boolean to destroy the component when closed (optional).
+- **width** and **height:** Dimensions of the panel (optional).
+- **className:** Additional CSS class for custom styling.
+- **drawer:** Boolean that defines whether the panel is a drawer.
+- **placement:** Position of the drawer (`top`, `bottom`, `left`, `right`).
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+### Child Components
 
-```
-cd my-turborepo
-npx turbo login
-```
+- **MagicPanel.Header:** Optional header of the panel.
+- **MagicPanel.Close:** Component to close the panel.
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### Styling
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+Customize panel styles using CSS classes and specific props for each position (`placement`).
 
-```
-npx turbo link
-```
+---
 
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+© 2024 Magic Panel. All rights reserved.
