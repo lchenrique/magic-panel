@@ -12,6 +12,9 @@ Magic Panel is a React library developed with TailwindCSS to simplify the implem
 - **Responsive Design:** Perfect for creating responsive and adaptable interfaces.
 - **Versatility:** Ideal for scenarios requiring different interfaces on desktop and mobile.
 
+### See more information
+🔗 [Demonstration](https://magic-panel-web.vercel.app/)
+
 ### Installation
 
 To use Magic Panel in your React project, follow these steps:
