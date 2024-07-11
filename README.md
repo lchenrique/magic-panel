@@ -28,7 +28,7 @@ To use Magic Panel in your React project, follow these steps:
 2. **Configure tailwind.config.js:**
 
    ```javascript
-   const { magicPanelPlugin } = require('magic-panel');
+   const { magicPanelPlugin } = require('magic-panel/plugin');
 
    module.exports = {
      content: ["./src/**/*.{html,js}"],
