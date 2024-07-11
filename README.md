@@ -2,9 +2,9 @@ Com base nas informações fornecidas, aqui está o conteúdo para o `README.md`
 
 ---
 
-## Magic Panel
+## Magic 🪄 Panel
 
-![Magic Panel Logo](magic-panel-logo.png)
+
 
 Magic Panel is a React library developed with TailwindCSS to simplify the implementation of modals and drawers.
 
