@@ -1,6 +1,3 @@
-Com base nas informações fornecidas, aqui está o conteúdo para o `README.md` do Magic Panel:
-
----
 
 ## Magic 🪄 Panel
 
