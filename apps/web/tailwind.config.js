@@ -9,6 +9,7 @@ export default {
  "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+
   important:true,
   darkMode: ['[data-mode="dark"]'],
   theme: {

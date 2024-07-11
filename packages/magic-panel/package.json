@@ -3,7 +3,7 @@
   "private": false,
   "description": "The magic panel for react",
   "version": "1.0.0",
-  "sideEffects": false,
+  "sideEffects": true,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -17,12 +17,13 @@
       "import": "./dist/plugin.js",
       "require": "./dist/plugin.cjs"
     },
-    "./style.css": "./dist/index.css"
+    "./index.css": "./dist/src/index.css"
   },
   "scripts":{
-    "build": "tsup",
+    "tw-css":"npx tailwindcss -i ./src/index.css -o ./src/output.css",
+    "build": "npm run tw-css && tsup",
     "clean": "rm -rf dist",
-    "dev": "tsup --watch",
+    "dev": "npm run tw-css && tsup --watch",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/",
     "test": "jest"

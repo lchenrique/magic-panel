@@ -8,6 +8,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   important:true,
+  corePlugins: {
+    preflight: false,
+  },
   darkMode: ['[data-mode="dark"]'],
   theme: {
     extend: {

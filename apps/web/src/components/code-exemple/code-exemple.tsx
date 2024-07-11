@@ -1,12 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Button from '../button/button';
-import { CodeContainer } from '../code-container/code-container';
-
-
+import Button from "../button/button";
+import { CodeContainer } from "../code-container/code-container";
 
 const CodeExample = ({ onOpen }: any) => {
-
-
   const codeString = `<MagicPanel 
     drawer={isDrawer} 
     placement={placement} 
@@ -29,8 +25,7 @@ const CodeExample = ({ onOpen }: any) => {
 </MagicPanel>
   `;
 
-  const installExemple = `npm install magic-panel --save`
-
+  const installExemple = `npm install magic-panel --save`;
 
   const customize = `<MagicPanel 
      drawer={isDrawer} 
@@ -56,27 +51,26 @@ const CodeExample = ({ onOpen }: any) => {
     </p>
 </MagicPanel>`;
 
-  return (<div className='flex flex-col gap-3'>
-    <p className='text-lg mt-4'>Install:</p>
+  return (
+    <div className="flex flex-col gap-3">
+      <p className="text-lg mt-4">Install:</p>
 
-    <CodeContainer language='node'>
-      {installExemple}
-    </CodeContainer>
+      <CodeContainer language="node">{installExemple}</CodeContainer>
 
-    <CodeContainer language="tsx">
-      {codeString}
-    </CodeContainer>
+      <CodeContainer language="tsx">{codeString}</CodeContainer>
 
-    <div className='flex items-center mt-4 justify-between'>
-      <p className='text-lg p-0 leading-none'>Customize:</p> <Button label='Open' onClick={() => onOpen("close", { className: "left-0 close:bg-primary" })}></Button>
+      <div className="flex items-center mt-4 justify-between">
+        <p className="text-lg p-0 leading-none">Customize:</p>{" "}
+        <Button
+          label="Open"
+          onClick={() =>
+            onOpen("close", { className: "left-0 close:bg-primary" })
+          }
+        ></Button>
+      </div>
+
+      <CodeContainer language="tsx">{customize}</CodeContainer>
     </div>
-
-    <CodeContainer language="tsx">
-      {customize}
-    </CodeContainer>
-
-  </div>
-
   );
 };
 

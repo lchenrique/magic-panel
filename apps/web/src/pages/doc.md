@@ -2,33 +2,33 @@ Certamente! Vou adicionar as classes do Tailwind CSS para definir o tamanho do t
 
 ```html
 <p class="text-base">
-  A <code class="bg-gray-100 px-1">MagicPanel</code> é uma biblioteca React que simplifica a criação de
-  painéis modais e gavetas (drawers) com animações configuráveis de entrada e
-  saída.
+  A <code class="bg-gray-100 px-1">MagicPanel</code> é uma biblioteca React que
+  simplifica a criação de painéis modais e gavetas (drawers) com animações
+  configuráveis de entrada e saída.
 </p>
 
 <h4 class="mt-4 text-lg">Instalação</h4>
 
 <p class="text-base">
-  Para utilizar a <code class="bg-gray-100 px-1">MagicPanel</code> em seu projeto React, siga os passos
-  abaixo:
+  Para utilizar a <code class="bg-gray-100 px-1">MagicPanel</code> em seu
+  projeto React, siga os passos abaixo:
 </p>
 
 <ol class="list-decimal list-inside">
   <li>
     <p class="text-base"><strong>Instalação via npm:</strong></p>
     <p>
-      <code class="bg-gray-100 px-1">
-        npm install magic-panel
-      </code>
+      <code class="bg-gray-100 px-1"> npm install magic-panel </code>
     </p>
   </li>
   <li>
     <p class="text-base"><strong>Importação no seu projeto:</strong></p>
-    <p class="text-base">Importe os componentes necessários no seu arquivo React:</p>
+    <p class="text-base">
+      Importe os componentes necessários no seu arquivo React:
+    </p>
     <p>
       <code class="bg-gray-100 px-1">
-        import &#123; MagicPanel &#125; from 'magic-panel';<br/>
+        import &#123; MagicPanel &#125; from 'magic-panel';<br />
         import 'magic-panel/dist/style.css'; // Importe o arquivo CSS fornecido
       </code>
     </p>
@@ -38,8 +38,9 @@ Certamente! Vou adicionar as classes do Tailwind CSS para definir o tamanho do t
 <h4 class="mt-4 text-lg">Uso Básico</h4>
 
 <p class="text-base">
-  A <code class="bg-gray-100 px-1">MagicPanel</code> pode ser utilizada como modal ou drawer, oferecendo
-  flexibilidade na exibição de conteúdos adicionais na interface.
+  A <code class="bg-gray-100 px-1">MagicPanel</code> pode ser utilizada como
+  modal ou drawer, oferecendo flexibilidade na exibição de conteúdos adicionais
+  na interface.
 </p>
 
 <h5 class="mt-2 text-md">Exemplo de Uso como Modal:</h5>
@@ -146,8 +147,12 @@ export default App;
 <h4 class="mt-4 text-lg">Componentes Filhos de <code>MagicPanel</code></h4>
 
 <ul class="list-disc list-inside">
-  <li class="text-base"><code>MagicPanel.Header</code>: Cabeçalho opcional do painel.</li>
-  <li class="text-base"><code>MagicPanel.Close</code>: Componente para fechar o painel.</li>
+  <li class="text-base">
+    <code>MagicPanel.Header</code>: Cabeçalho opcional do painel.
+  </li>
+  <li class="text-base">
+    <code>MagicPanel.Close</code>: Componente para fechar o painel.
+  </li>
 </ul>
 
 <h4 class="mt-4 text-lg">Estilização</h4>
@@ -161,8 +166,8 @@ export default App;
 
 <p class="text-base">
   Essa documentação fornece uma visão geral dos recursos e uso básico da
-  biblioteca <code class="bg-gray-100 px-1">MagicPanel</code>, permitindo a integração rápida e fácil em
-  projetos React.
+  biblioteca <code class="bg-gray-100 px-1">MagicPanel</code>, permitindo a
+  integração rápida e fácil em projetos React.
 </p>
 ```
 

@@ -1,0 +1,304 @@
+:root {
+  --background: 258 31% 100%;
+  --foreground: 258 58% 2%;
+  --muted: 258 19% 94%;
+  --muted-foreground: 258 4% 29%;
+  --popover: 258 31% 100%;
+  --popover-foreground: 258 58% 2%;
+  --card: 0 0% 99%;
+  --card-foreground: 258 75% 4%;
+  --border: 258 5% 92%;
+  --input: 258 5% 92%;
+  --primary: 247 100% 63%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 258 20% 90%;
+  --secondary-foreground: 258 20% 30%;
+  --accent: 258 20% 90%;
+  --accent-foreground: 258 20% 30%;
+  --destructive: 16 84% 34%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 247 100% 63%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 258 49% 0%;
+  --foreground: 258 22% 97%;
+  --muted: 258 19% 6%;
+  --muted-foreground: 258 4% 71%;
+  --popover: 258 49% 0%;
+  --popover-foreground: 258 22% 97%;
+  --card: 258 55% 5%;
+  --card-foreground: 0 0% 100%;
+  --border: 258 5% 12%;
+  --input: 258 5% 12%;
+  --primary: 247 100% 63%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 258 2% 16%;
+  --secondary-foreground: 258 2% 76%;
+  --accent: 258 2% 16%;
+  --accent-foreground: 258 2% 76%;
+  --destructive: 16 84% 48%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 247 100% 63%;
+}
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.h-full {
+  height: 100% !important;
+}
+
+.max-h-\[calc\(100\%-55px\)\] {
+  max-height: calc(100% - 55px) !important;
+}
+
+.max-h-\[calc\(100\%-64px\)\] {
+  max-height: calc(100% - 64px) !important;
+}
+
+.max-h-\[calc\(100\%-92px\)\] {
+  max-height: calc(100% - 92px) !important;
+}
+
+.max-h-\[calc\(100vh-92px\)\] {
+  max-height: calc(100vh - 92px) !important;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+.flex-col {
+  flex-direction: column !important;
+}
+
+.items-center {
+  align-items: center !important;
+}
+
+.gap-3 {
+  gap: 0.75rem !important;
+}
+
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem !important;
+}
+
+.border {
+  border-width: 1px !important;
+}
+
+.border-border {
+  border-color: hsl(var(--border)) !important;
+}
+
+.border-stone-800 {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(41 37 36 / var(--tw-border-opacity)) !important;
+}
+
+.bg-background {
+  background-color: hsl(var(--background)) !important;
+}
+
+.p-8 {
+  padding: 2rem !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-xl {
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important;
+}
+
+.font-semibold {
+  font-weight: 600 !important;
+}
+
+.text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+.opacity-100 {
+  opacity: 1 !important;
+}
+
+.transition-all {
+  transition-property: all !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 150ms !important;
+}
+
+:root {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+*{
+  box-sizing: border-box;
+}
+
+#root, html,body {
+  height:100%;
+}
+
+h2 {
+  padding-bottom: 5px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+ul.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+p {
+  color: hsl(var(--foreground));
+}
+
+li strong {
+  color: hsl(var(--foreground));
+}
+
+.close\:bg-white:before {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+}
+
+.close\:bg-white:after {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+}
