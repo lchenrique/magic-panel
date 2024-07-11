@@ -61,7 +61,7 @@ const Doc = () => {
           </p>
           <p>
             <CodeContainer language="tsx">
-              {`import { magicPanelPlugin } from 'magic-panel';
+              {`import { magicPanelPlugin } from 'magic-panel/plugin';
 
 module.exports = {
   content: ["./src/**/*.{html,js}"],
@@ -84,7 +84,7 @@ module.exports = {
 
           <CodeContainer language="tsx">
             {`import { MagicPanel } from 'magic-panel';
-import 'magic-panel/dist/style.css'; // Import the provided CSS file`}
+import 'magic-panel/style.css'; // Import the provided CSS file`}
           </CodeContainer>
         </li>
       </ul>

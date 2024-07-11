@@ -43,7 +43,7 @@ To use Magic Panel in your React project, follow these steps:
 
    ```javascript
    import { MagicPanel } from 'magic-panel';
-   import 'magic-panel/dist/style.css'; // Import the provided CSS file
+   import 'magic-panel/style.css'; // Import the provided CSS file
    ```
 
 ### Basic Usage
