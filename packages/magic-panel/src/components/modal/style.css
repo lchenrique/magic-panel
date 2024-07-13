@@ -101,7 +101,7 @@
 }
 
 .magic-overlay {
-  @apply fixed top-0 left-0 bg-black/80 h-full w-full;
+  @apply fixed top-0 left-0 h-full w-full;
   -webkit-transition: opacity 0.15s ease-in-out;
   -moz-transition: opacity 0.15s ease-in-out;
   -ms-transition: opacity 0.15s ease-in-out;
@@ -109,7 +109,6 @@
   transition: opacity 0.15s ease-in-out;
 }
 .magic-panel-content {
-  @apply bg-background p-6 rounded-lg ;
   --animate-duration: 0.3s;
 }
 
@@ -121,9 +120,6 @@
   @apply min-w-72 h-screen  items-center justify-center fixed;
 }
 
-.magic-panel {
-  @apply flex-col border border-stone-700 overflow-auto h-full max-h-[calc(100vh-92px)]  flex w-full items-center   bg-background p-8 rounded-lg;
-}
 
 .magic-close {
   height: 24px; /* this can be anything */

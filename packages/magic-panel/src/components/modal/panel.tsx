@@ -1,13 +1,14 @@
 import { ReactNode, useCallback, useEffect, useState } from "react";
-import { cn } from "../../utils";
+import { cn, getChildren } from "../../utils";
 import { PanelHeader } from "./panel-header";
 import { PanelClose } from "./panel-close";
 import "./style.css";
+import { PanelOverlay } from "./panel-overlay";
 
 export interface IPanelPropsBase {
   header?: ReactNode;
   content?: ReactNode;
-  children?: ReactNode;
+  children?: any;
   open?: boolean;
   onChange?: (isOpen: boolean) => void;
   destroyOnClose?: boolean;
@@ -148,6 +149,9 @@ const MagicPanel = ({
     toggle(open);
   }, [animationPanelIn, open, toggle]);
 
+
+  const overlay =  getChildren(children, "MagicPanel.Overlay")
+
   const panel = (
     <div
       id="panel"
@@ -159,13 +163,11 @@ const MagicPanel = ({
       )}
       style={{ display, opacity }}
     >
-      <div
-        className="magic-overlay opacity-100 "
-        onClick={() => toggle(false)}
-      />
+      {overlay ||  <PanelOverlay onClose={()=> toggle(false)} />}
+      {console.log({className})}
       <div
         className={cn(
-          `magic-panel-content content--${isDrawer} animate__animated animate__faster`,
+          `magic-panel-content bg-background p-6 rounded-lg  content--${isDrawer} animate__animated animate__faster`,
           animation,
           `placement-content-${placement}`,
           "border border-border",
@@ -181,7 +183,7 @@ const MagicPanel = ({
             : 500,
         }}
       >
-        {children}
+        {children.filter((child:any) => child?.type?.displayName !== "MagicPanel.Overlay")}
       </div>
     </div>
   );
@@ -195,5 +197,6 @@ const MagicPanel = ({
 
 MagicPanel.Header = PanelHeader;
 MagicPanel.Close = PanelClose;
+MagicPanel.Overlay = PanelOverlay
 
 export { MagicPanel };

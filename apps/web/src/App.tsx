@@ -10,7 +10,9 @@ function App() {
   const [isDrawer, setDrawer] = useState(false);
   const [placement, setPlacement] =
     useState<IPanelPropsDrawer["placement"]>("right");
-  const [closeParams, setCloseParams] = useState({});
+  const [closeParams, setCloseParams] = useState<any>(null);
+  const [overlayParams, setOverlayParams] = useState<any>(null);
+
   const radioOptions = [
     { label: "Top", value: "top" },
     { label: "Bottom", value: "bottom" },
@@ -24,13 +26,27 @@ function App() {
     className: "",
   } as any;
 
-  const handleOpenExemple = useCallback((ex?: any, params?: any) => {
-    if (ex === "close") {
-      setCloseParams(params);
-      setIsOpen(!isOpen);
-      return;
+  const handleOpenExemple = useCallback((params?: any) => {
+    if (params) {
+      Object.entries(params).forEach(([key, value]: any) => {
+
+     
+        if (key === "overlay") {
+          setOverlayParams(value);
+       
+        }
+        if (key === "close") {
+          console.log(value)
+          setCloseParams(value);
+        }
+        setIsOpen(!isOpen);
+
+      });
+      return
     }
-    setCloseParams({});
+
+    setOverlayParams(null);
+    setCloseParams(null);
     setIsOpen(!isOpen);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -39,12 +55,23 @@ function App() {
     <div className="container mx-auto">
       <>
         <MagicPanel
+          {...props}
           open={isOpen}
           onChange={setIsOpen}
           width={!isDrawer && 600}
-          {...props}
+          className="bg-card"
         >
-          <MagicPanel.Close onClose={() => setIsOpen(false)} {...closeParams} />
+          {console.log({ closeParams })}
+          <MagicPanel.Close
+            onClose={() => setIsOpen(false)}
+            className={closeParams}
+          />
+          {overlayParams && (
+            <MagicPanel.Overlay
+              onClose={() => setIsOpen(false)}
+              className={overlayParams}
+            />
+          )}
           <MagicPanel.Header> Discover MagicPanel</MagicPanel.Header>
           <ContentScroll className="p-10">
             <p>
@@ -106,9 +133,7 @@ function App() {
             <Button label="Open panel" onClick={() => handleOpenExemple()} />
           </div>
         </div>
-        <CodeExample
-          onOpen={(ex: any, params: any) => handleOpenExemple(ex, params)}
-        />
+        <CodeExample onOpen={(params: any) => handleOpenExemple(params)} />
         <div className="w-full h-[1px] bg-secondary  my-4" />
         <h1 className="text-xl font-bold mb-4">
           Here are some key features and characteristics:
