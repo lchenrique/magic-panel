@@ -4,7 +4,7 @@
     { "src": "/documentation", "dest": "/documentation.html" }  
   ],  
   "rewrites": [  
-    { "source": "/:path*", "destination": "/index.html" }  
+    { "source": "/(.*)", "destination": "/"}  
   ],  
   "cleanUrls": true  
 }
