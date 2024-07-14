@@ -2,7 +2,7 @@
 
 ### Overview
 
-MagicPanel is a React component library designed for creating dynamic and interactive panels. It supports both modal and drawer styles and provides a variety of customization options for enhanced user experience.
+`MagicPanel` is a React component library designed for creating dynamic and interactive panels. It supports both modal and drawer styles and provides a variety of customization options for enhanced user experience.
 
 #### • Its usage is intuitive and highly customizable.
 
@@ -12,6 +12,7 @@ MagicPanel is a React component library designed for creating dynamic and intera
 
 #### • Ideal for scenarios where a modal is preferred on the desktop version, while a bottom-up sliding drawer is used on the mobile version.
 
+----
 ## Installation
 
 Install the MagicPanel library via npm:
@@ -32,7 +33,7 @@ module.exports = {
 ```
 
 ```jsx
-//  now you can access a "close:" variant in tailwindcss
+//  Now you have access to the group: variant in Tailwind CSS.
 
 <MagicPanel.Close className="close:bg-emerald-400" />
 ```
