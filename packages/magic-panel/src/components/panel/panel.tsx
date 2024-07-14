@@ -4,6 +4,8 @@ import { PanelHeader } from "./panel-header";
 import { PanelClose } from "./panel-close";
 import "./style.css";
 import { PanelOverlay } from "./panel-overlay";
+import { Content } from "../content/content";
+import { ContentScroll } from "../content-scroll/content-scroll";
 
 export interface IPanelPropsBase {
   header?: ReactNode;
@@ -56,28 +58,28 @@ const MagicPanel = ({
       animationOut: "animate__slideOutUp",
       width: "100%",
       height: "400px",
-      className: "max-h-[calc(100%-55px)]",
+      className: "max-h-[calc(100%-55px)] rounded-b-lg",
     },
     bottom: {
       animationIn: "animate__slideInUp",
       animationOut: "animate__slideOutDown",
       width: "100%",
       height: "400px",
-      className: "max-h-[calc(100%-55px)]",
+      className: "max-h-[calc(100%-55px)] rounded-t-lg",
     },
     left: {
       animationIn: "animate__slideInLeft",
       animationOut: "animate__slideOutLeft",
       width: "400px",
       height: "100%",
-      className: "",
+      className: "rounded-r-lg",
     },
     right: {
       animationIn: "animate__slideInRight",
       animationOut: "animate__slideOutRight",
       width: "400px",
       height: "100%",
-      className: "",
+      className: "rounded-l-lg",
     },
   };
 
@@ -174,12 +176,12 @@ const MagicPanel = ({
       {overlay || <PanelOverlay onClose={() => toggle(false)} />}
       <div
         className={cn(
-          `magic-panel-content bg-background p-6 rounded-lg  content--${isDrawer} animate__animated animate__faster`,
+          `magic-panel-content bg-background p-6   content--${isDrawer} animate__animated animate__faster`,
           animation,
           `placement-content-${placement}`,
           "border border-border",
           !drawer
-            ? "max-h-[calc(100%-92px)]"
+            ? "max-h-[calc(100%-92px)] rounded-lg"
             : placementPosition[placement || "right"].className,
           className,
         )}
@@ -211,5 +213,7 @@ const MagicPanel = ({
 MagicPanel.Header = PanelHeader;
 MagicPanel.Close = PanelClose;
 MagicPanel.Overlay = PanelOverlay;
+MagicPanel.Content = Content;
+MagicPanel.ContentScroll = ContentScroll;
 
 export { MagicPanel };

@@ -2,7 +2,7 @@
   "name": "magic-panel",
   "private": false,
   "description": "React library developed with TailwindCSS to simplify the implementation of modals and drawers",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "sideEffects": true,
   "main": "./dist/src/index.js",
   "module": "./dist/src/index.mjs",

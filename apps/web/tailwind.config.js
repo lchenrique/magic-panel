@@ -51,6 +51,7 @@ export default {
       },
     },
   },
-  plugins:  [ magicPanelPlugin ]
+  // eslint-disable-next-line no-undef
+  plugins:  [ magicPanelPlugin , require('@tailwindcss/typography')]
 }
 

@@ -26,7 +26,6 @@ const CodeContainer = ({
         customStyle={{
           background: "transparent",
           borderRadius: "0.375rem",
-          padding: 16,
         }}
       >
         {children}

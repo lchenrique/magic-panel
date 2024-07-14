@@ -1,5 +1,5 @@
 
 
 .button-primary{
-  @apply flex bg-primary px-3 py-2 rounded-lg hover:bg-primary/85 active:bg-primary/75;
+  @apply flex bg-primary text-foreground px-3 py-2 rounded-lg hover:bg-primary/85 active:bg-primary/75;
   }

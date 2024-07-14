@@ -2,7 +2,6 @@
 import { useCallback, useState } from "react";
 import RadioGroup from "./components/radio/radio";
 import CodeExample from "./components/code-exemple/code-exemple";
-import { ContentScroll } from "./components/content-scroll/content-scroll";
 import { MagicPanel, IPanelPropsDrawer } from "magic-panel";
 import Button from "./components/button/button";
 function App() {
@@ -61,7 +60,6 @@ function App() {
           width={!isDrawer && 600}
           className="bg-card"
         >
-          {console.log({ closeParams })}
           <MagicPanel.Close
             onClose={() => setIsOpen(false)}
             className={closeParams}
@@ -73,7 +71,7 @@ function App() {
             />
           )}
           <MagicPanel.Header> Discover MagicPanel</MagicPanel.Header>
-          <ContentScroll className="p-10">
+          <MagicPanel.ContentScroll className="px-3 pt-4">
             <p>
               Welcome to the world of MagicPanel! This powerful React library
               allows you to easily create modal panels and drawers within your
@@ -103,7 +101,7 @@ function App() {
               interfaces, providing a smooth and intuitive experience for your
               users.
             </p>
-          </ContentScroll>
+          </MagicPanel.ContentScroll>
         </MagicPanel>
       </>
 

@@ -1,174 +1,174 @@
-Certamente! Vou adicionar as classes do Tailwind CSS para definir o tamanho do texto em algumas partes do texto:
+# Documentation for MagicPanel Library
 
-```html
-<p class="text-base">
-  A <code class="bg-gray-100 px-1">MagicPanel</code> é uma biblioteca React que
-  simplifica a criação de painéis modais e gavetas (drawers) com animações
-  configuráveis de entrada e saída.
-</p>
+### Overview
 
-<h4 class="mt-4 text-lg">Instalação</h4>
+`MagicPanel` is a React component library designed for creating dynamic and interactive panels. It supports both modal and drawer styles and provides a variety of customization options for enhanced user experience.
 
-<p class="text-base">
-  Para utilizar a <code class="bg-gray-100 px-1">MagicPanel</code> em seu
-  projeto React, siga os passos abaixo:
-</p>
+#### • Its usage is intuitive and highly customizable.
 
-<ol class="list-decimal list-inside">
-  <li>
-    <p class="text-base"><strong>Instalação via npm:</strong></p>
-    <p>
-      <code class="bg-gray-100 px-1"> npm install magic-panel </code>
-    </p>
-  </li>
-  <li>
-    <p class="text-base"><strong>Importação no seu projeto:</strong></p>
-    <p class="text-base">
-      Importe os componentes necessários no seu arquivo React:
-    </p>
-    <p>
-      <code class="bg-gray-100 px-1">
-        import &#123; MagicPanel &#125; from 'magic-panel';<br />
-        import 'magic-panel/dist/style.css'; // Importe o arquivo CSS fornecido
-      </code>
-    </p>
-  </li>
-</ol>
+#### • With MagicPanel, you can easily switch between modal and drawer using just a boolean, without compromising the layout.
 
-<h4 class="mt-4 text-lg">Uso Básico</h4>
+#### • The library is perfect for creating responsive and adaptable interfaces with ease.
 
-<p class="text-base">
-  A <code class="bg-gray-100 px-1">MagicPanel</code> pode ser utilizada como
-  modal ou drawer, oferecendo flexibilidade na exibição de conteúdos adicionais
-  na interface.
-</p>
+#### • Ideal for scenarios where a modal is preferred on the desktop version, while a bottom-up sliding drawer is used on the mobile version.
 
-<h5 class="mt-2 text-md">Exemplo de Uso como Modal:</h5>
+## Installation
 
-<pre><code class="bg-gray-100 px-2 py-1 rounded-lg text-sm">
-import React, &#123; useState &#125; from 'react';
-import &#123; MagicPanel &#125; from 'magic-panel';
+Install the MagicPanel library via npm:
 
-const App = () =&gt; &#123;
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () =&gt; &#123;
-    setOpen(true);
-  &#125;;
-
-  const handleClose = () =&gt; &#123;
-    setOpen(false);
-  &#125;;
-
-  return (
-    &lt;&gt;
-      &lt;button onClick=&#123;handleOpen&#125; class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded text-sm">
-        Abrir Painel
-      &lt;/button>
-      &lt;MagicPanel open=&#123;open&#125; onChange=&#123;setOpen&#125;&gt;
-        &lt;MagicPanel.Header&gt;Meu Painel&lt;/MagicPanel.Header&gt;
-        &lt;div&gt;
-          Conteúdo do Painel
-          &lt;MagicPanel.Close /&gt;
-        &lt;/div&gt;
-      &lt;/MagicPanel&gt;
-    &lt;/&gt;
-  );
-};
-
-export default App;
-</code></pre>
-
-<h5 class="mt-2 text-md">Exemplo de Uso como Drawer:</h5>
-
-<pre><code class="bg-gray-100 px-2 py-1 rounded-lg text-sm">
-import React, &#123; useState &#125; from 'react';
-import &#123; MagicPanel &#125; from 'magic-panel';
-
-const App = () =&gt; &#123;
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () =&gt; &#123;
-    setOpen(true);
-  &#125;;
-
-  const handleClose = () =&gt; &#123;
-    setOpen(false);
-  &#125;;
-
-  return (
-    &lt;&gt;
-      &lt;button onClick=&#123;handleOpen&#125; class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded text-sm">
-        Abrir Drawer
-      &lt;/button>
-      &lt;MagicPanel open=&#123;open&#125; onChange=&#123;setOpen&#125; drawer placement="right"&gt;
-        &lt;div&gt;
-          Conteúdo do Drawer
-          &lt;MagicPanel.Close /&gt;
-        &lt;/div&gt;
-      &lt;/MagicPanel&gt;
-    &lt;/&gt;
-  );
-};
-
-export default App;
-</code></pre>
-
-<h4 class="mt-4 text-lg">Props Disponíveis para <code>MagicPanel</code></h4>
-
-<ul class="list-disc list-inside">
-  <li class="text-base">
-    <code>open</code>: Booleano que controla se o painel está aberto ou fechado.
-  </li>
-  <li class="text-base">
-    <code>onChange</code>: Função callback chamada quando o estado de
-    <code>open</code> muda.
-  </li>
-  <li class="text-base">
-    <code>destroyOnClose</code>: Booleano para destruir o componente quando
-    fechado (opcional).
-  </li>
-  <li class="text-base">
-    <code>width</code> e <code>height</code>: Largura e altura do painel
-    (opcional).
-  </li>
-  <li class="text-base">
-    <code>className</code>: Classe CSS adicional para estilização personalizada.
-  </li>
-  <li class="text-base">
-    <code>drawer</code>: Booleano que define se o painel é um drawer (gaveta).
-  </li>
-  <li class="text-base">
-    <code>placement</code>: Posição do drawer (<code>top</code>,
-    <code>bottom</code>, <code>left</code>, <code>right</code>).
-  </li>
-</ul>
-
-<h4 class="mt-4 text-lg">Componentes Filhos de <code>MagicPanel</code></h4>
-
-<ul class="list-disc list-inside">
-  <li class="text-base">
-    <code>MagicPanel.Header</code>: Cabeçalho opcional do painel.
-  </li>
-  <li class="text-base">
-    <code>MagicPanel.Close</code>: Componente para fechar o painel.
-  </li>
-</ul>
-
-<h4 class="mt-4 text-lg">Estilização</h4>
-
-<p class="text-base">
-  Personalize o estilo dos painéis utilizando classes CSS e props específicas
-  para cada posição (<code>placement</code>).
-</p>
-
-<hr class="mt-4" />
-
-<p class="text-base">
-  Essa documentação fornece uma visão geral dos recursos e uso básico da
-  biblioteca <code class="bg-gray-100 px-1">MagicPanel</code>, permitindo a
-  integração rápida e fácil em projetos React.
-</p>
+```bash
+npm install magic-panel
 ```
 
-Este texto está pronto para ser colado em um documento do Word ou editor de texto, com formatação utilizando classes do Tailwind CSS para estilização de elementos específicos.
+```jsx
+import { magicPanelPlugin } from 'magic-panel/plugin';
+
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [magicPanelPlugin()] //  add this
+```
+
+```jsx
+//  now you can access a "close:" variant in tailwindcss
+
+<MagicPanel.Close className="close:bg-emerald-400" />
+```
+
+### Styling
+
+MagicPanel uses a combination of CSS classes for styling. Make sure to include the CSS file in your project:
+
+```jsx
+import "magic-panel/style.css";
+```
+
+## Usage
+
+Here is a basic example of how to use the MagicPanel component:
+
+```jsx
+import React, { useState } from "react";
+import "magic-panel/style.css"
+import { MagicPanel } from "magic-panel";
+
+const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div>
+      <button onClick={handleToggle}>Toggle Panel</button>
+      <MagicPanel
+        open={isOpen}
+        onChange={setIsOpen}
+        drawer={true}
+        placement="right"
+      >
+        <MagicPanel.Header>Header Content</MagicPanel.Header>
+        <MagicPanel.Content>
+          <p>Your content goes here...</p>
+        </MagicPanel.Content>
+        <MagicPanel.Close onClose={() => setIsOpen(false)} />
+      </MagicPanel>
+    </div>
+  );
+};
+
+export default App;
+```
+
+### Components
+
+#### MagicPanel
+
+The main component for creating a panel. It supports both modal and drawer styles.
+
+**Props:**
+
+- `header`: `ReactNode` - Content for the panel header.
+- `content`: `ReactNode` - Content for the panel body.
+- `children`: `ReactNode` - Children components inside the panel.
+- `open`: `boolean` - Whether the panel is open or closed.
+- `onChange`: `(isOpen: boolean) => void` - Callback function triggered when the panel state changes.
+- `destroyOnClose`: `boolean` - Whether to destroy the panel content when closed.
+- `width`: `number` - Width of the panel.
+- `height`: `number | string` - Height of the panel.
+- `className`: `string` - Additional class names for customization.
+- `drawer`: `boolean` - Whether the panel should be a drawer.
+- `placement`: `"top" | "bottom" | "left" | "right"` - Position of the drawer.
+
+**Example:**
+
+```jsx
+<MagicPanel open={true} drawer={true} placement="right">
+  <MagicPanel.Header>Header Content</MagicPanel.Header>
+  <MagicPanel.ContentScroll>
+    <p>Your content goes here...</p>
+  </MagicPanel.ContentScroll>
+  <MagicPanel.Close onClose={() => setIsOpen(false)} />
+</MagicPanel>
+```
+
+#### ContentScroll
+
+A component to enable scrolling within the panel content.
+
+**Props:**
+
+- `children`: `ReactNode` - Children components inside the content scroll area.
+- `className`: `string` - Additional class names for customization.
+
+**Example:**
+
+```jsx
+<ContentScroll>
+  <p>Your scrollable content goes here...</p>
+</ContentScroll>
+```
+
+
+
+### Advanced Usage
+
+#### Drawer Positioning
+
+MagicPanel supports various drawer positions. Set the `placement` prop to define the position:
+
+- `"top"`
+- `"bottom"`
+- `"left"`
+- `"right"`
+
+**Example:**
+
+```jsx
+<MagicPanel open={true} drawer={true} placement="left">
+  <MagicPanel.Header>Header Content</MagicPanel.Header>
+  <MagicPanel.Content>
+    <p>Your content goes here...</p>
+  </MagicPanel.Content>
+  <MagicPanel.Close>Close</MagicPanel.Close>
+</MagicPanel>
+```
+
+### Handling Mobile Devices
+
+MagicPanel includes optimizations for mobile devices. It automatically adjusts the overflow behavior based on the user's device.
+
+### License
+
+MagicPanel is licensed under the MIT License.
+
+### Support
+
+For bug reports and feature requests, please visit the [issues page](https://github.com/lchenrique/magic-panel/issues).
+
+### Homepage
+
+Visit the [official site](https://magic-panel-web.vercel.app) for more information and documentation.
