@@ -1,6 +1,5 @@
 import React from "react";
 import { cn } from "../../utils";
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import prism from "react-syntax-highlighter/dist/esm/styles/prism/coldark-dark";
 

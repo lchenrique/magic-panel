@@ -8,6 +8,7 @@ const CodeExample = ({ onOpen }: any) => {
     placement={placement} 
     open={isOpen} 
     onChange={setIsOpen} 
+    className="bg-card"
    >
     <MagicPanel.Close onClose={() => setIsOpen(false)} />
 
@@ -32,12 +33,13 @@ const CodeExample = ({ onOpen }: any) => {
      placement={placement} 
      open={isOpen} 
      onChange={setIsOpen} 
+     className="bg-card"
   >
     <MagicPanel.Close
         onClose={() => setIsOpen(false)}
         className='left-0 close:bg-primary'
       />
-
+    <MagicPanel.Overlay className="bg-primary/15 backdrop-blur-sm" onClose={() =>  setIsOpen(false)} />
     <MagicPanel.Header>Bem-vindo ao Magic Panel!</MagicPanel.Header>
 
     <p>
@@ -64,7 +66,7 @@ const CodeExample = ({ onOpen }: any) => {
         <Button
           label="Open"
           onClick={() =>
-            onOpen("close", { className: "left-0 close:bg-primary" })
+            onOpen({ close: "left-0 close:bg-primary", overlay: "bg-primary/15 backdrop-blur-sm brightness-75" })
           }
         ></Button>
       </div>

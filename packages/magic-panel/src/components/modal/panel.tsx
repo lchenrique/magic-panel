@@ -1,13 +1,14 @@
 import { ReactNode, useCallback, useEffect, useState } from "react";
-import { cn } from "../../utils";
+import { cn, getChildren } from "../../utils";
 import { PanelHeader } from "./panel-header";
 import { PanelClose } from "./panel-close";
 import "./style.css";
+import { PanelOverlay } from "./panel-overlay";
 
 export interface IPanelPropsBase {
   header?: ReactNode;
   content?: ReactNode;
-  children?: ReactNode;
+  children?: any;
   open?: boolean;
   onChange?: (isOpen: boolean) => void;
   destroyOnClose?: boolean;
@@ -100,18 +101,23 @@ const MagicPanel = ({
         setAnimation(animationPanelIn);
         onChange && onChange(value);
 
+        const body = document.body;
+        const hasVerticalScrollbar = body.scrollHeight > body.clientHeight;
+
         document.body.style.overflow = "hidden";
 
-        if (
-          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent,
-          )
-        ) {
-          document.body.classList.add("magic-panel-scroll-mobile");
+        if (hasVerticalScrollbar) {
+          if (
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+              navigator.userAgent,
+            )
+          ) {
+            document.body.classList.add("magic-panel-scroll-mobile");
 
-          return;
-        } else {
-          document.body.classList.add("magic-panel-scroll");
+            return;
+          } else {
+            document.body.classList.add("magic-panel-scroll");
+          }
         }
 
         const time = setTimeout(() => {
@@ -148,6 +154,8 @@ const MagicPanel = ({
     toggle(open);
   }, [animationPanelIn, open, toggle]);
 
+  const overlay = getChildren(children, "MagicPanel.Overlay");
+
   const panel = (
     <div
       id="panel"
@@ -155,17 +163,18 @@ const MagicPanel = ({
       className={cn(
         "magic-panel-wrapper transition-all",
         isDrawer,
-        placement ? `placement-${placement}` : "",
+        isDrawer
+          ? placement
+            ? `placement-${placement}`
+            : ""
+          : "placement-right",
       )}
       style={{ display, opacity }}
     >
-      <div
-        className="magic-overlay opacity-100 "
-        onClick={() => toggle(false)}
-      />
+      {overlay || <PanelOverlay onClose={() => toggle(false)} />}
       <div
         className={cn(
-          `magic-panel-content content--${isDrawer} animate__animated animate__faster`,
+          `magic-panel-content bg-background p-6 rounded-lg  content--${isDrawer} animate__animated animate__faster`,
           animation,
           `placement-content-${placement}`,
           "border border-border",
@@ -176,24 +185,31 @@ const MagicPanel = ({
         )}
         style={{
           maxWidth: width || placementPosition[placement || "right"].width,
+          width: "100%",
           height: drawer
             ? height || placementPosition[placement || "right"].height
             : 500,
         }}
       >
-        {children}
+        {/* TESTE */}
+        {Array.isArray(children)
+          ? children.filter(
+              (child) => child?.type?.displayName !== "MagicPanel.Overlay",
+            )
+          : children}
       </div>
     </div>
   );
 
   if (destroyOnClose) {
-    return open && panel;
+    return open && <div className="magic-panel">{panel}</div>;
   }
 
-  return panel;
+  return <div className="magic-panel">{panel}</div> ;
 };
 
 MagicPanel.Header = PanelHeader;
 MagicPanel.Close = PanelClose;
+MagicPanel.Overlay = PanelOverlay;
 
 export { MagicPanel };

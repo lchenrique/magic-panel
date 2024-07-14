@@ -49,17 +49,14 @@ const Doc = () => {
           <p className="text-lg">
             <strong>Install via npm:</strong>
           </p>
-          <p>
             <CodeContainer language="node">
               {`npm install magic-panel --save`}
             </CodeContainer>
-          </p>
         </li>
         <li>
           <p className="text-lg">
             <strong>tailwind.config:</strong>
           </p>
-          <p>
             <CodeContainer language="tsx">
               {`import { magicPanelPlugin } from 'magic-panel/plugin';
 
@@ -72,7 +69,6 @@ module.exports = {
 }
               `}
             </CodeContainer>
-          </p>
         </li>
         <li>
           <p className="text-lg">

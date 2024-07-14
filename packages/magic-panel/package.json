@@ -1,29 +1,66 @@
 {
   "name": "magic-panel",
   "private": false,
-  "description": "The magic panel for react",
-  "version": "1.0.0",
+  "description": "React library developed with TailwindCSS to simplify the implementation of modals and drawers",
+  "version": "1.0.12",
   "sideEffects": true,
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "type":"module",
+  "main": "./dist/src/index.js",
+  "module": "./dist/src/index.mjs",
+  "types": "./dist/src/index.d.ts",
+  "type": "module",
   "files": [
     "dist/**"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lchenrique/magic-panel.git"
+  },
+  "keywords": [
+    "magicpanel",
+    "panel",
+    "magic panel",
+    "panel library",
+    "user interface",
+    "UI",
+    "UI components",
+    "panel tools",
+    "dynamic panel",
+    "responsive layout",
+    "interface design",
+    "interactive panel",
+    "customizable panel",
+    "frontend",
+    "web development",
+    "JavaScript library",
+    "panel integration",
+    "modular panel",
+    "easy-to-use panel",
+    "panel widgets",
+    "modal",
+    "drawer"
+  ],
+  "author": "Carlos Henrique",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lchenrique/magic-panel/issues"
+  },
   "exports": {
-    ".": "./src/index.tsx",
+    ".": {
+      "import": "./dist/src/index.js",
+      "require": "./dist/src/index.cjs",
+      "types": "./dist/src/index.d.ts"
+    },
     "./plugin": {
       "import": "./dist/plugin.js",
       "require": "./dist/plugin.cjs"
     },
     "./index.css": "./dist/src/index.css"
   },
-  "scripts":{
-    "tw-css":"npx tailwindcss -i ./src/index.css -o ./src/output.css",
-    "build": "npm run tw-css && tsup",
+  "scripts": {
+    "tw-css": "npx tailwindcss -i ./src/index.css -o ./src/output.css",
+    "build": "tsup",
     "clean": "rm -rf dist",
-    "dev": "npm run tw-css && tsup --watch",
+    "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/",
     "test": "jest"

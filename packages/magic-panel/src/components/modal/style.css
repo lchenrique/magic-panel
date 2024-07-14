@@ -1,13 +1,21 @@
 @import 'animate.css';
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.magic-panel-scroll {
+  width: calc(100% - 16px) !important;
+}
+
+.magic-panel-scroll-mobile {
+  width: 100%;
+}
+
+.magic-panel{
 
 @layer base {
-  :root {
+  /* :root {
     --background: 258 31% 100%;
     --foreground: 258 58% 2%;
     --muted: 258 19% 94%;
@@ -28,9 +36,9 @@
     --destructive-foreground: 0 0% 100%;
     --ring: 247 100% 63%;
     --radius: 0.5rem;
-  }
+  } */
 
-  .dark {
+  /* .dark {
     --background: 258 49% 0%;
     --foreground: 258 22% 97%;
     --muted: 258 19% 6%;
@@ -50,7 +58,7 @@
     --destructive: 16 84% 48%;
     --destructive-foreground: 0 0% 100%;
     --ring: 247 100% 63%;
-  }
+  } */
 }
 
 
@@ -101,7 +109,7 @@
 }
 
 .magic-overlay {
-  @apply fixed top-0 left-0 bg-black/80 h-full w-full;
+  @apply fixed top-0 left-0 h-full w-full;
   -webkit-transition: opacity 0.15s ease-in-out;
   -moz-transition: opacity 0.15s ease-in-out;
   -ms-transition: opacity 0.15s ease-in-out;
@@ -109,7 +117,6 @@
   transition: opacity 0.15s ease-in-out;
 }
 .magic-panel-content {
-  @apply bg-background p-6 rounded-lg ;
   --animate-duration: 0.3s;
 }
 
@@ -121,9 +128,6 @@
   @apply min-w-72 h-screen  items-center justify-center fixed;
 }
 
-.magic-panel {
-  @apply flex-col border border-stone-700 overflow-auto h-full max-h-[calc(100vh-92px)]  flex w-full items-center   bg-background p-8 rounded-lg;
-}
 
 .magic-close {
   height: 24px; /* this can be anything */
@@ -154,13 +158,7 @@
   @apply cursor-pointer  flex items-center justify-center h-6 w-6 absolute leading-[0.5];
 }
 
-.magic-panel-scroll {
-  width: calc(100% - 16px) !important;
-}
 
-.magic-panel-scroll-mobile {
-  width: 100%;
-}
 
 
 .close\:bg-white:before {
@@ -170,4 +168,6 @@
 .close\:bg-white:after {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) /* #ffffff */ !important;
+}
+
 }

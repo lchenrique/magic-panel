@@ -5,9 +5,9 @@ export default defineConfig((options: Options) => ({
   format: ["esm", "cjs"],
   dts: true,
   external: ["react"],
-  loader: {
-    ".css": "css",
-  },
+  // loader: {
+  //   ".css": "css",
+  // },
   banner: {
     js: "'use client'",
   },
