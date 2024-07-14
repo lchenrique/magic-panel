@@ -1,6 +1,10 @@
-{
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/documentation", "destination": "/documentation/index.html" }
-  ]
+{  
+  "routes": [  
+    { "src": "/", "dest": "/index.html" },  
+    { "src": "/documentation", "dest": "/documentation.html" }  
+  ],  
+  "rewrites": [  
+    { "source": "/:path*", "destination": "/index.html" }  
+  ],  
+  "cleanUrls": true  
 }
